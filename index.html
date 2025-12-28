@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaaram kotu | Premium Traditional Indian Foods</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-olive: #3d4a3e;
+            --accent-gold: #c5a059;
+            --cream-bg: #fdfaf5;
+            --dark-text: #1a1a1a;
+            --muted-text: #6b7280;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--cream-bg);
+            color: var(--dark-text);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-olive { background-color: var(--primary-olive); }
+        .text-olive { color: var(--primary-olive); }
+        .bg-gold { background-color: var(--accent-gold); }
+        .text-gold { color: var(--accent-gold); }
+        .border-gold { border-color: var(--accent-gold); }
+        .bg-cream { background-color: var(--cream-bg); }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--cream-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--primary-olive); border-radius: 10px; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+
+        .mega-menu {
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(10px);
+          transition: all 0.3s ease;
+        }
+        .group:hover .mega-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+
+        /* Festive mode highlights */
+        .festive-active .border-gold-festive { border-color: var(--accent-gold); }
+        .festive-active .text-gold-festive { color: var(--accent-gold); }
+
+        /* Scroll Overlap Helpers */
+        .scroll-container {
+            perspective: 1px;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .section-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 0;
+        }
+        .section-overlap {
+            position: relative;
+            z-index: 10;
+            background-color: var(--cream-bg);
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.05);
+        }
+
+        /* Marquee Styles */
+        @keyframes marquee-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        .animate-marquee-left {
+          animation: marquee-left var(--duration, 60s) linear infinite;
+        }
+        .animate-marquee-right {
+          animation: marquee-right var(--duration, 60s) linear infinite;
+        }
+        .marquee-container:hover .animate-marquee-left,
+        .marquee-container:hover .animate-marquee-right {
+          animation-play-state: paused;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-snowfall": "https://esm.sh/react-snowfall@^2.2.0",
+    "react-router": "https://esm.sh/react-router@^7.11.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
